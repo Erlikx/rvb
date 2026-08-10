@@ -182,7 +182,7 @@ jobs:
 
       - name: Upload diagnostic screenshots
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: diagnostics-${{ matrix.app }}-${{ github.run_id }}
           path: diagnostics/
