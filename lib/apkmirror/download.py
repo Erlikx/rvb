@@ -7,7 +7,8 @@ import json
 import re
 from pathlib import Path
 
-from ..config import APKMIRROR_SITES
+# Düzeltilen import satırı (Eğer sabit sites.py içindeyse):
+from ..config.sites import APKMIRROR_SITES
 from ..logging_config import get_logger
 from . import browser as browser_mod
 from . import navigation
