@@ -1,0 +1,12 @@
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = [
+    "E501",  # long lines: the JS-in-string blocks in lib/apkmirror push past 120 sometimes
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
