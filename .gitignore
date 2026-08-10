@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+
+# İndirilen ve yamanmış dosyalar (Git'e yüklenmemeli)
+downloads/
+*.apk
+*.apkm
+*.part
+
+# Ortam değişkenleri
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# Hata anında alınan teşhis ekran görüntüleri (workflow artifact olarak yükleniyor)
+diagnostics/
