@@ -1,30 +1,13 @@
-"""Re-exports so `from lib.config import X` / `from ..config import X`
-keeps working after the config split into apps.py / display.py / sources.py.
+"""APKMirror scraping, split into browser / navigation / extraction / download.
+
+External code should only need:
+    from lib import apkmirror
+    await apkmirror.download_apk(version, app_name, force_build)
+    await apkmirror.get_latest_listing(app_name)
+    await apkmirror.close_browser()
 """
 
-from __future__ import annotations
+from .browser import close_browser
+from .download import download_apk, get_latest_listing
 
-from .apps import AppPatchConfig, APPS_CONFIG, PROCESS_ORDER
-from .display import DISPLAY_NAMES, ICONS, display_name, icon
-from .sources import (
-    ApkMirrorSite,
-    APKMIRROR_APPS,
-    APKMIRROR_SITES,
-    GITHUB_SOURCE_TAGS,
-    PATCH_SOURCES,
-)
-
-__all__ = [
-    "AppPatchConfig",
-    "APPS_CONFIG",
-    "PROCESS_ORDER",
-    "DISPLAY_NAMES",
-    "ICONS",
-    "display_name",
-    "icon",
-    "ApkMirrorSite",
-    "APKMIRROR_APPS",
-    "APKMIRROR_SITES",
-    "GITHUB_SOURCE_TAGS",
-    "PATCH_SOURCES",
-]
+__all__ = ["download_apk", "get_latest_listing", "close_browser"]
